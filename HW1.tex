@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[IL2]{fontenc}
+\usepackage[czech]{babel}
+\setlength{\parskip}{1.5em}
+\setlength{\parindent}{0em}
+\usepackage{a4wide}
+\usepackage{listings}
+\usepackage[spaces,hyphens]{url}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+
+\begin{document}
+    \part*{Proof that a semigroup is a group if it has a unit element and it is left-cancelative and left-divisible}
+    
+    Let $S(\cdot)$ be the semigroup and $e \in S$ its unit element. \\
+    We define table $T; (\forall row, col \in S)(T(row, col) := row \cdot col)$.
+
+    We know that $S$ is left-cancelative iff $(\forall r, a \in S)(|\{(r, c); c \in S | T(r, c) = a\}| \le 1)$. \\
+    And that $S$ is left-divisible iff $(\forall r, a \in S)(|\{(r, c); c \in S | T(r, c) = a\}| \ge 1)$.
+
+    Which means that: $(\forall r, a \in S)(|\{(r, c); c \in S | T(r, c) = a\}| = 1)$. \\
+    And that means: $(\forall r \in S)(T(r, \_) \text{ is a permutation of } S)$. \\
+    And that means: $(\forall c \in S)(\exists !c^{-1} \in S)(e = c^{-1} \cdot c)$ and $(\forall c^{-1} \in S)(\exists !c \in S)(e = c \cdot c^{-1})$ \\
+    and thus $c^{-1}$ is a well defined inverse of $c$.
+
+    $S(\cdot)$ is a semigroup and it fulfills the existence of unit element and the existence of inverses and therefore it is a group. $\square$
+
+    \section*{Proof that ... and right-divisible}
+
+    Right-divisible: $(\forall a, r \in S)(\exists c \in S)(a = r \cdot c)$ \\
+    Left-cancelative: $(\forall a, b, c \in S)(a \cdot b = a \cdot c \Rightarrow b = c)$
+
+    So if there are two distinct values $c_1$, $c_2$ given some $a$ and $r$ for which the right-divisibility formula holds, then they have to be identical (from left-cancelativity). Therefore there cannot be said distinct values.
+
+    With that said we can conclude that $(\forall r, a \in S)(|\{(r, c); c \in S | T(r, c) = a\}| \ge 1)$ and thus that $S(\cdot)$ is also Left-divisible and so we can use the first proof. $\square$
+
+    \pagebreak
+
+    \part*{Proof that a semigroup has a unit element and it is left/right-cancelative and left/right-divisible if it is a group}
+
+    Let $S(\cdot)$ be the given semigroup (group).
+
+    Existence of a unit element is trivial as groups are defined by having a unit element, let's call the unit element $e$.
+
+    From associativity and existence of inverses: \\
+    $(\forall a, c \in S)(a = a \cdot e = a \cdot (c^{-1} \cdot c) = (a \cdot c^{-1}) \cdot c) \Rightarrow S$ is left-divisible. \\
+    Similarly: $(\forall a, r \in S)(a = \cdots = r \cdot (r^{-1} \cdot a)) \Rightarrow S$ is right-divisible.
+
+    From associativity and existence of inverses and given some $a, b, c \in S$ such that $(a \cdot b = a \cdot c)$:
+    $a \cdot b = a \cdot c \Rightarrow a^{-1} \cdot a \cdot b = a^{-1} \cdot a \cdot c \Rightarrow (a^{-1} \cdot a) \cdot b = (a^{-1} \cdot a) \cdot c \Rightarrow e \cdot b = e \cdot c \Rightarrow b = c$ \\
+    Thus $S$ is left-cancelative.
+
+    Similarly we can show that $S$ is right-cancelative by reversing the order of terms in each side of every equation.
+\end{document}
