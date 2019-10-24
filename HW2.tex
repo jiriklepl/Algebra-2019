@@ -1,0 +1,33 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[IL2]{fontenc}
+\usepackage[czech]{babel}
+\setlength{\parskip}{1.5em}
+\setlength{\parindent}{0em}
+\usepackage{a4wide}
+\usepackage{listings}
+\usepackage[spaces,hyphens]{url}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+
+\begin{document}
+    \part*{Consider the first definition of a group. Prove that sub-universes of of a group are exactly sub-groups.}
+    
+    $G(\cdot)$ is a group when:
+    \begin{itemize}
+        \item $G$ is a set and $\cdot$ is a binary operation on $G$.
+        \item $\cdot$ is associative on $G$.
+        \item $G(\cdot)$ is left and right divisible.
+        \item $G(\cdot)$ is left and right cancelative.
+    \end{itemize}
+
+    \section*{Proof:}
+
+    Let $G(\cdot)$ be a group and $S(\cdot)$ its sub-universe. The first two constraints of the definition trivially hold for $S(\cdot)$ from the definition of $G(\cdot)$ and $S$ being its sub-universe.
+
+    The last constraint also holds trivially.
+
+    If we define $T(G, \cdot)$ the table of an operation $\cdot$ on a set $G$ as $(\forall a, b \in G) T(G, \cdot)_{a, b} := a \cdot b$ then $G$ is left and right divisible iff every $a \in G$ is mentioned in each row and column at least once. It is left and right cancelative iff ... at most once.
+
+    We know that $S$ is a subset of a finite set and thus it is also finite. Then $T(S, \cdot)$ is a table with $|S|$ elements in each of its row and column and every $a \in S$ is mentioned at most once in each row and column (as we know $S$ is left and right cancelative) and thus we can conclude that it is mentioned exactly once and therefore divisibilities also hold. $\square$
+\end{document}
