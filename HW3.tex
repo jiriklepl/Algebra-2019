@@ -25,4 +25,15 @@
     Let $B_g^{-1}$ be $\{b_g^{-1} ; b \in B | b_g^{-1} b = g\}$. And for every $g$: $|B_g^{-1}| = |B|$ because of cancelability (if for two distinct $b_1, b_2$ their generalized inverses were equal they would have to be equal as well).
 
     $\forall g \in G: |A| + |B_g^{-1}| \geq |G|$ and thus $|A \cap B_g^{-1}| \geq 1$ and so we can define $a_g \in A, b_g \in B$ s.t. $a_g b_g = g$. $\square$
+    
+    \part*{Prove that every element of a finite field $F(+,\cdot)$ is a sum of two squares}
+
+    Let $F_\square$ be the set of (multiplicative) squares. All we need is to prove that $2|F_\square| > |F|$. And then we can use the prove above with $A = B = F_\square$.
+
+    We can define it as $F_\square = \{a ; a \in F | a^2 \in F\}$.
+    
+    Given two squares $a^2, b^2$ equality  $a^2 = b^2$ happens iff
+    $(a - b)(a + b) = 0$ or in other word $a = b$ or $a = -b$. And so for any nontrivial field $F$ we have $|F_\square| = \frac{|F|+1}{2}$ since $b \neq -b$ for any $b \in F$ other that $0$.
+
+    $|F_\square| = \frac{|F|+1}{2} \Rightarrow 2|F_\square| > |F|$. $\square$
 \end{document}
