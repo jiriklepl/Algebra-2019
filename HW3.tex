@@ -1,0 +1,28 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[IL2]{fontenc}
+\usepackage[czech]{babel}
+\setlength{\parskip}{1.5em}
+\setlength{\parindent}{0em}
+\usepackage{a4wide}
+\usepackage{listings}
+\usepackage[spaces,hyphens]{url}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+
+\begin{document}
+    \part*{Let $G(.)$ be a finite group and $A$, $B$ subsets of $G$.
+    Prove that if $|A|+|B|>|G|$, then $AB = G$}
+
+    $|A| + |B| > |G|$ and thus $|A \cap B| \geq 1$ (pidgeon hole principle) and we can define $x \in A \cap B$.
+
+    We know that for every set of elements $S \subseteq G: |S^{-1}| = |S|$.
+
+    $|A| + |B^{-1}| \geq |G|$ and thus $|A \cap B^{-1}| \geq 1$ and so we can define $a_e \in A, b_e \in B$ s.t. $a_e = b_e^{-1}$ or in other words $a_e b_e = e$. ($e = 1$)
+    
+    From divisibility we can generalize this for any $g \in G$.
+
+    Let $B_g^{-1}$ be $\{b_g^{-1} ; b \in B | b_g^{-1} b = g\}$. And for every $g$: $|B_g^{-1}| = |B|$ because of cancelability (if for two distinct $b_1, b_2$ their generalized inverses were equal they would have to be equal as well).
+
+    $\forall g \in G: |A| + |B_g^{-1}| \geq |G|$ and thus $|A \cap B_g^{-1}| \geq 1$ and so we can define $a_g \in A, b_g \in B$ s.t. $a_g b_g = g$. $\square$
+\end{document}
