@@ -6,26 +6,54 @@
 \usepackage[spaces,hyphens]{url}
 \usepackage{amsmath,amsfonts,amssymb}
 \usepackage{graphicx}
+\usepackage{tikz}
 
 \setlength{\parskip}{1em}
 \setlength{\parindent}{0em}
 \setlength{\oddsidemargin}{24pt}
 \setlength{\evensidemargin}{24pt}
 \setlength{\textwidth}{421pt}
+\tikzstyle{every node}=[circle, draw, fill=black!50,
+                        inner sep=2pt, minimum width=8pt]
 
 \begin{document}
     \part*{Analyse all the conjugacy classes of the group of rotations of a regular tetrahedron}
 
-    We color the edges with three colors so each vertex is connected to one edge of each color and each face is delimited by one edge of each color.
+    We number each side with a unique number, then we cast the tetrahedron and when it lands we look at it from one of the three visible faces. We convert it to a permutation in $S_4$ by mapping the first number to the number of the face we see, the second number to the number of the face on the right, the third number to the number of the face on the left, and the last number to the number of the bottom face.
 
-
-
-    \begin{tabular}{|c|c|c|}
+    \begin{tabular}{|c|c|c|c|}
         \hline
-        \textbf{permutation} & \textbf{action} & \textbf{\#} \\
-        \hline
-        $()$ & rotation around a corner & 12 \\
-        \hline
+        \textbf{permutation ex.} & \textbf{type} & \textbf{action} & \textbf{\#} \\ \hline
+        $1$ & $(4, 0, 0, 0)$ & identity & 1 \\ \hline
+        $(1,2,3)$ & $(1, 0, 1, 0)$ & rotate around a center of a face & 8 \\ \hline
+        $(1,2)(3,4)$ & $(0, 2, 0, 0)$ & switch neighboring faces & 3 \\ \hline
     \end{tabular}
-    
+
+    There are $12$ symmetries as expected. All can be described by the number of the face we are looking at and the number of the bottom face ($4 \times 3$).
+    \pagebreak
+
+    \part*{Prove that every even permutation of n-element set can be written as a product of $(1,\dots n)$ and $(1, n-1, n)$.}
+
+    We know that an even permutation can be written as a product of cycles of length 3.
+
+    So all we need is to show that an arbitrary 3-cycle can be written as a product of $(1,\dots n)$ and $(1, n-1, n)$.
+
+    In all the following computations we suppose $\mod n$ arithmetics if not stated otherwise.
+
+    $C_1^{-1} = C_1^{n - 1}$ -- similarly for all products of cycles identity occurs when the exponent of the power is equal to a common multiple of their lengths and therefore inverse is equal to the power with the exponent decreased by one.
+
+    $C_1 \cdot C_2 \cdot C_1^{-1} = (n-1, n, n-2)$
+
+    Right rotation of sequence from $a-1$ to $a+1$: $R_{a-1,a+1} = C_1^{n-a} \cdot C_2 \cdot C_1^{a-n}$ \\
+    Right rotation for seqs of even length: $\forall a-b \equiv 0 \mod 2: R_{a-1, b+1} = \prod\limits_{i = b, i:=i-2}^a R_{i-1,i+1}$
+
+    Suppose a 3-cycle $(a, b, c)$. Then $a \equiv b \vee b \equiv c \vee c \equiv a \mod 2$ as there are only two classes of equivalence. W.L.O.G. suppose $a \equiv b$.
+
+    We get the cycle by the following procedure:
+
+    We do $R_{a,b}$ to move $b$ just before $a$ and then $\prod\limits_{i=a+1,i:=i+1}^{c-2} R_{i-1,i+1}$ to move pair $b,a$ to be on the left side of $c$, we remember this permutation (subprocess) as $X$.
+
+    Then we do $R_{c-2,c}$ to rotate $b,a,c$ to $c,b,a$ and then we do $X^{-1}$.
+
+    We end up with the cycle $(a,b,c)$. $\square$
 \end{document}
