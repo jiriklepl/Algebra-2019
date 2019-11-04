@@ -13,8 +13,7 @@
 \setlength{\oddsidemargin}{24pt}
 \setlength{\evensidemargin}{24pt}
 \setlength{\textwidth}{421pt}
-\tikzstyle{every node}=[circle, draw, fill=black!50,
-                        inner sep=2pt, minimum width=8pt]
+\tikzstyle{every node}=[circle, draw, fill=black!50, inner sep=2pt, minimum width=8pt]
 
 \begin{document}
     \part*{Analyse all the conjugacy classes of the group of rotations of a regular tetrahedron}
@@ -36,9 +35,9 @@
 
     We know that an even permutation can be written as a product of cycles of length 3.
 
-    So all we need is to show that an arbitrary 3-cycle can be written as a product of $(1,\dots n)$ and $(1, n-1, n)$.
+    So all we need is to show that an arbitrary 3-cycle can be written as a product of $C_1 := (1,\dots n)$ and $C_2 := (1, n-1, n)$.
 
-    In all the following computations we suppose $\mod n$ arithmetics if not stated otherwise.
+    In all the following computations we will use $\mod n$ arithmetics if not stated otherwise.
 
     $C_1^{-1} = C_1^{n - 1}$ -- similarly for all products of cycles identity occurs when the exponent of the power is equal to a common multiple of their lengths and therefore inverse is equal to the power with the exponent decreased by one.
 
@@ -47,7 +46,7 @@
     Right rotation of sequence from $a-1$ to $a+1$: $R_{a-1,a+1} = C_1^{n-a} \cdot C_2 \cdot C_1^{a-n}$ \\
     Right rotation for seqs of even length: $\forall a-b \equiv 0 \mod 2: R_{a-1, b+1} = \prod\limits_{i = b, i:=i-2}^a R_{i-1,i+1}$
 
-    Suppose a 3-cycle $(a, b, c)$. Then $a \equiv b \vee b \equiv c \vee c \equiv a \mod 2$ as there are only two classes of equivalence. W.L.O.G. suppose $a \equiv b$.
+    Suppose we have a 3-cycle $(a, b, c)$. Then $a \equiv b \vee b \equiv c \vee c \equiv a \mod 2$ as there are only two classes of equivalence. W.L.O.G. suppose $a \equiv b$.
 
     We get the cycle by the following procedure:
 
