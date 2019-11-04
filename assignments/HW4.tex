@@ -43,8 +43,8 @@
 
     $C_1 \cdot C_2 \cdot C_1^{-1} = (n-1, n, n-2)$
 
-    Right rotation of sequence from $a-1$ to $a+1$: $R_{a-1,a+1} = C_1^{n-a} \cdot C_2 \cdot C_1^{a-n}$ \\
-    Right rotation for seqs of even length: $\forall a-b \equiv 0 \mod 2: R_{a-1, b+1} = \prod\limits_{i = b, i:=i-2}^a R_{i-1,i+1}$
+    Right rotation of sequence from $a-1$ to $a+1$: $R_{a-1,a+1} := C_1^{n-a} \cdot C_2 \cdot C_1^{a-n}$ \\
+    Right rotation for seqs of even length: $\forall a-b \equiv 0 \mod 2: R_{a-1, b+1} := \prod\limits_{i = b, i:=i-2}^a R_{i-1,i+1}$
 
     Suppose we have a 3-cycle $(a, b, c)$. Then $a \equiv b \vee b \equiv c \vee c \equiv a \mod 2$ as there are only two classes of equivalence. W.L.O.G. suppose $a \equiv b$.
 
