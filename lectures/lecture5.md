@@ -32,13 +32,16 @@ Definice: G(.) je grupa:
 - $[G : H] := |G / lmod H | = | G / rmod H |$ $\leftarrow$ to je index podgrupy H v G.
 
 Veta 4.6 (Lagrangeova): Pro grupy G(.) a jeji podgrupu H plati:
+
 - $|G| = |H| \cdot [G : H]$.
 
 Dukaz:
+
 - rmod H je ekvivalence na G.. $G = \bigcup\limits_{A \in G / rmod H} A \Rightarrow |G| = | \bigcup\limits_{A \in G / rmod H} A| =  \sum\limits_{A \in G / rmod H} |A|=  \sum\limits_{A \in G / rmod H} |H| =  |H|\cdot[G : H]$.
 
 Dusledek 4.7: Rad podgrupy deli rad cele grupy (pro konecne grupy)
 Priklady 4.8:
+
 1) Je-li G grupa prvociselneho radu, pak {1}, G jsou jeji jedine podgrupy.
 2) $|S_{10}| = 10$, $S_{10}$ neobsahuje podgrupy radu $11, 13,$ ani jenoho prvocisla $> 10$.
 3) H, K dve konecne podgrupy G, kde $NSD(|H|. |K|) = 1$ pak $H \cap K = \{1\}$.
@@ -47,12 +50,14 @@ Priklady 4.8:
 ## Klasifikace cyklickych grup
 
 Definice:
+
 1) G(.) grupa, $X \subseteq G$ pak $<X>_G := \bigcap\limits_{X \subseteq H \leq G}H$... poodgrupa grupy G **generovana** X.
 Misto $<\{g\}>_G$ budeme psat $<g>$.
 2) grupa G(.) je **cyklicka**, existuje-li $g \in G$ ze $G = <g>_G$.
 3) **Rad prvku g Grupy G(.)** je definovan jako rad grupy $<g>_G$
 
 Priklad 5.1:
+
 1) $\mathbb{Z}(+)$ je cyklicka grupa, jelikoz $\mathbb{Z} = <1>_\mathbb{Z}$.
 2) Je-li $f : G \rightarrow H$ epimorfismus grup, kde G je cyklicka, tak H je take cyklicka.
     $G=<g>_G \Rightarrow H=<h>_H$
@@ -63,5 +68,6 @@ Priklad 5.1:
      $"\Leftarrow"$: Z Bezoutovy rovnosti $b, c \in \mathbb{Z}$, ze $1 = ba + cn$, tj $1 === ba (mod n) \Leftrightarrow 1 === a (b mod n) (mod n) \Rightarrow 1 \in <a>_{\mathbb{Z}_n} \Rightarrow \mathbb{Z}_n = <a>_{\mathbb{Z}_n}$.
 
 Znaceni: G(.) grupa $g \in G$.
+
 - $g^0 := 1$, $g^n := g^{n-1}g$, pro $n \in \mathbb{N}$
 - pro $n \in \mathbb{Z} \smallsetminus \mathbb{N}_0... g^{-n} := (g^{-1})^{|n|}$.
