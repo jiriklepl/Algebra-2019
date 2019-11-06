@@ -1,8 +1,11 @@
+# ignoring tex aux files
 *.aux
 *.fdb_latexmk
 *.fls
 *.log
 
+# ignoring the synctex archive
 *.synctex.gz
 
+# ignoring compiled tex files
 *.pdf
