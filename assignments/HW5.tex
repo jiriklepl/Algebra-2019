@@ -1,0 +1,37 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[IL2]{fontenc}
+\usepackage[czech]{babel}
+\usepackage{listings}
+\usepackage[spaces,hyphens]{url}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+\setlength{\oddsidemargin}{24pt}
+\setlength{\evensidemargin}{24pt}
+\setlength{\textwidth}{421pt}
+\tikzstyle{every node}=[circle, draw, fill=black!50, inner sep=2pt, minimum width=8pt]
+
+\begin{document}
+    \part*{Analyse all the conjugacy classes of the group of rotations of a regular tetrahedron}
+
+    We can define a rotation on odd number of elements using even number of transpositions: \\
+    Left: $\forall n \in \mathbb{N}, 2 \not| n: L(a_1, \dots a_n) = \prod\limits_{i = 1, i := i + 1}^{n - 1} (a_{i}, a_{i + 1})$ \\
+    Right: $\forall n \in \mathbb{N}, 2 \not| n:R(a_1, \dots a_n) = \prod\limits_{i = n - 1, i := i - 1}^{1} (a_{i + 1}, a_{i})$
+
+    We will use this for rotations of edges and vertices of the cube as any rotation can be expressed as a product of "rolls" ($90°$ rotations around opposite faces).
+
+    One such rotation (no matter whether of edges or vertices) can be expressed as a permutation $(1, 2, 3, 4) \cdot (5, 6, 7, 8)$ where the numbers represent edges or vertices around each of faces we are rolling the cube around.
+
+    $(1, 2, 3, 4) \cdot (5, 6, 7, 8) = R(1, 2, 4) \cdot R(6, 7, 8) \cdot (3, 4) \cdot (5, 6)$.
+
+    After the first two $R$ operations, first two and last two indexes have the right elements and then we need just swap the third with fourth and fifth with sixth.
+
+    Therefore $\alpha(R) \subseteq A_8, \beta(R) \subseteq A_{12}$
+
+    For faces we want $(1, 2, 3, 4)$. $(1, 2, 3, 4) = R(2, 3, 4) \cdot (1, 2)$ which is an odd permutation so $\gamma(R) \not\subseteq A_6$.
+
+\end{document}
