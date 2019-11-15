@@ -16,15 +16,17 @@
 \tikzstyle{every node}=[circle, draw, fill=black!50, inner sep=2pt, minimum width=8pt]
 
 \begin{document}
-    \part*{Analyse all the conjugacy classes of the group of rotations of a regular tetrahedron}
+    \part*{Let $\alpha: R \rightarrow S_8, \beta: R \rightarrow S_{12}, \gamma: R \rightarrow S_6$, be maps given by assigning to
+    rotations of a cube permutations of vertices, edges, faces, respectively.
+    Prove that $\alpha(R) \subseteq A_8, \beta(R) \subseteq A_{12}, \gamma(R) \subseteq A_6.$}
 
     We can define a rotation on odd number of elements using even number of transpositions: \\
-    Left: $\forall n \in \mathbb{N}, 2 \not| n: L(a_1, \dots a_n) = \prod\limits_{i = 1, i := i + 1}^{n - 1} (a_{i}, a_{i + 1})$ \\
-    Right: $\forall n \in \mathbb{N}, 2 \not| n:R(a_1, \dots a_n) = \prod\limits_{i = n - 1, i := i - 1}^{1} (a_{i + 1}, a_{i})$
+    Left: $\forall n \in \mathbb{N}, 2 \not| \ n: L(a_1, \dots a_n) = \prod\limits_{i = 1, i := i + 1}^{n - 1} (a_{i}, a_{i + 1})$ \\
+    Right: $\forall n \in \mathbb{N}, 2 \not| \ n:R(a_1, \dots a_n) = \prod\limits_{i = n - 1, i := i - 1}^{1} (a_{i + 1}, a_{i})$
 
-    We will use this for rotations of edges and vertices of the cube as any rotation can be expressed as a product of "rolls" ($90°$ rotations around opposite faces).
+    We will use this for rotations of edges and vertices of the cube as any rotation of the cube can be expressed as a product of ``rolls'' ($90^\circ$ rotations around opposite faces).
 
-    One such rotation (no matter whether of edges or vertices) can be expressed as a permutation $(1, 2, 3, 4) \cdot (5, 6, 7, 8)$ where the numbers represent edges or vertices around each of faces we are rolling the cube around.
+    One such ``roll'' rotation (no matter whether of edges or vertices) can be expressed as a permutation $(1, 2, 3, 4) \cdot (5, 6, 7, 8)$ where the numbers represent edges or vertices around each of faces we are rolling the cube around.
 
     $(1, 2, 3, 4) \cdot (5, 6, 7, 8) = R(1, 2, 4) \cdot R(6, 7, 8) \cdot (3, 4) \cdot (5, 6)$.
 
