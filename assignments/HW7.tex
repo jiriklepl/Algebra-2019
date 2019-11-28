@@ -18,7 +18,15 @@
 \begin{document}
     \part*{Prove that for given $n, m \in \mathbb{N^+}, n | m$ there is an isomorphism between $n\mathbb{Z}/m\mathbb{Z}$ and $\mathbb{Z}_{m/n}$ }
 
-    $n\mathbb{Z}/m\mathbb{Z} = \{a + m\mathbb{Z} | a \in n\mathbb{Z}\} = \{\{a \equiv b \mod m | b \in n\mathbb{Z}\} | a \in n\mathbb{Z}\} = \{\{na \equiv b \mod m | b \in n\mathbb{Z}\} | a \in \mathbb{Z}\} = \{\{na \equiv b \mod m | b \in n\mathbb{Z}\} | a \in \mathbb{Z}_{m/n}\}$ (Because $n \times (a + m/n) \equiv na \mod m$) Which we can use to define the isomorphism.
+    $n\mathbb{Z}/m\mathbb{Z} = \{a + m\mathbb{Z} | a \in n\mathbb{Z}\} = \{\{a \equiv b \mod m | b \in n\mathbb{Z}\} | a \in n\mathbb{Z}\} = \{\{na \equiv b \mod m | b \in n\mathbb{Z}\} | a \in \mathbb{Z}\} = \{\{na \equiv b \mod m | b \in n\mathbb{Z}\} | a \in \mathbb{Z}_{m/n}\}$
+    (Because $n \times (a + m/n) \equiv na \mod m$)
+    Which we can use to define the isomorphism.
 
-    $h: \mathbb{Z}_{m/n} \leftrightarrow n\mathbb{Z}/m\mathbb{Z}; h(a) = \{na \equiv b \mod m | b \in n\mathbb{Z}\}$ This gives different answers for different $a$'s and it covers the set $n\mathbb{Z}/m\mathbb{Z}$. So it is a well defined isomorphism. $\square$
+    $h: \mathbb{Z}_{m/n} \leftrightarrow n\mathbb{Z}/m\mathbb{Z}; h(a) = \{na \equiv b \mod m | b \in n\mathbb{Z}\}$
+    This gives different answers for different $a$'s and it covers the set
+    $n\mathbb{Z}/m\mathbb{Z}$.
+
+    For $a + b = c$ in $\mathbb{Z}_{m/n}$: $h(a) + h(b) = h(c) \rightarrow \{na \equiv x \mod m | x \in n\mathbb{Z}\} + \{nb \equiv x \mod m | x \in n\mathbb{Z}\} = \{nc \equiv x \mod m | x \in n\mathbb{Z}\}$ is expected behavior and applies other way around as well.
+
+    So it is a well defined isomorphism. $\square$
 \end{document}
