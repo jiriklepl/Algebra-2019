@@ -1,0 +1,35 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[IL2]{fontenc}
+\usepackage[czech]{babel}
+\usepackage{listings}
+\usepackage[spaces,hyphens]{url}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+\setlength{\oddsidemargin}{24pt}
+\setlength{\evensidemargin}{24pt}
+\setlength{\textwidth}{421pt}
+\tikzstyle{every node}=[circle, draw, fill=black!50, inner sep=2pt, minimum width=8pt]
+
+\begin{document}
+    \part*{We have $n$ kinds of beads, each different color and unlimited number of such beads. How many different necklaces of 12 beads can we make?}
+
+    We have an alphabet $A = {1, \dots n}$ and any word consisting of letters from $A$ defines a necklace, set of such words is $W$ (also contains empty word $e$).
+
+    $W(.)$ follows associativity and has an identity element $e$ so it is a monoid with generator $A$.
+
+    Let's define length $l: W \rightarrow \mathbb{N}$ such that $l(e) = 0, \forall w \in W, a \in A: l(wa) = l(w) + 1$.
+
+    Let $G$ be cyclic necklace group on with rotations with a generator $g$.
+
+    Each rotation $g^k$ is a permutation of order $\frac{n}{gcd(n,k)}$ and thus gives us $gcd(k,n)$ orbits. And this and Burnside's lemma give us:
+
+    $|A^{12} / G|$ = $\frac{1}{12} \sum\limits_{i=1}^{12} n^{gcd(i,12)} = \frac{n^1+n^2+n^3+n^4+n^1+n^6+n^1+n^4+n^3+n^2+n^1}{12} = \frac{4n^1+2n^2+2n^3+2n^4+n^6}{12}$.
+
+
+
+\end{document}
