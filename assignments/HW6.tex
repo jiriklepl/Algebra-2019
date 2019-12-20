@@ -1,0 +1,32 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[IL2]{fontenc}
+\usepackage[czech]{babel}
+\usepackage{listings}
+\usepackage[spaces,hyphens]{url}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+\setlength{\oddsidemargin}{24pt}
+\setlength{\evensidemargin}{24pt}
+\setlength{\textwidth}{421pt}
+\tikzstyle{every node}=[circle, draw, fill=black!50, inner sep=2pt, minimum width=8pt]
+
+\begin{document}
+    \part*{Prove that there is an isomorphism between $S_4 / V$ and $S_3$, where $V = \{(1, 2)(3, 4), (1,3)(2,4), (1,4)(2,3), id\}$}
+
+    $S_4 / V = \{aV | a \in S_4\} = \{\{\{1 \rightarrow a; 2 \rightarrow b; 3 \rightarrow c; 4 \rightarrow d\}; \{1 \rightarrow b; 2 \rightarrow a; 3 \rightarrow d; 4 \rightarrow c\}; \{1 \rightarrow c; 2 \rightarrow d; 3 \rightarrow a; 4 \rightarrow b\}; \{1 \rightarrow d; 2 \rightarrow c; 3 \rightarrow b; 4 \rightarrow a\} | \{1 \rightarrow a;2 \rightarrow b;3 \rightarrow c;4 \rightarrow d\}\} \in S_4\}$.
+
+    The permutations $\{1 \rightarrow a; 2 \rightarrow b; 3 \rightarrow c; 4 \rightarrow d\}; \{1 \rightarrow b; 2 \rightarrow a; 3 \rightarrow d; 4 \rightarrow c\}; \{1 \rightarrow c; 2 \rightarrow d; 3 \rightarrow a; 4 \rightarrow b\}; \{1 \rightarrow d; 2 \rightarrow c; 3 \rightarrow b; 4 \rightarrow a\}$ in this definition of $S_4 / V$ can be considered equivalent, any of these could be on the right side of the previous expression and the meaning would stay the same.
+
+    So every element of $S_4$ generates four identical sets and thus $|S_4 / V| = |S_4| / 4 = |S_3|$.
+
+    Let's define projection $x: S_4 / V \rightarrow S_4$ such that $\forall a \in S_4 / V: x(a)(1) = 1 \wedge x(a) \in a$, this is well defined as only one permutation in $a$ maps $1$ to $1$ (see the paragraph 2).
+
+    We will prove that projection $h: S_4 / V \rightarrow S_3$, such that $\forall a \in S_4 / V, b \in \{1,2,3\}: h(a)(b) = x(a)(b + 1) - 1$, is an isomorphism.
+
+    \textbf{Proof}: $h(V) = id_3; \forall a, b \in S_4 / V: h(a) \cdot h(b) = h(x(a) V) \cdot h(x(b) V) = h(x(x(a) V) \cdot x(x(b) V)) = h((x(a) \cdot x(b))V) = h(x(a \cdot b)V) = h(a \cdot b)$ and trivially $h(S_4 / V) = S_3. \square$
+\end{document}
